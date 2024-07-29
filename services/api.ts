@@ -5,27 +5,29 @@ import {
   BreedsResponse,
   PetResponse,
 } from "@/types";
+import { wrapInQuotes } from "@/lib/utils";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const fetchPets = async (
+  page: number | undefined = 1,
   animal: string | undefined = undefined,
   breed: string | undefined = undefined,
-  page: number | undefined = 1
+  location: string | undefined = undefined
 ): Promise<ApiResponse> => {
   page = page > 1 ? page : undefined;
   const response = await axios.get(`${API_BASE_URL}/pets`, {
     params: {
       animal,
       breed,
+      location: wrapInQuotes(location),
       page,
     },
   });
-  console.log(response);
   return response.data;
 };
 
-export const fetchPetById = async (id: number): Promise<PetResponse> => {
+export const fetchPetById = async (id: string): Promise<PetResponse> => {
   const response = await axios.get(`${API_BASE_URL}/pets`, {
     params: {
       id,
