@@ -54,7 +54,7 @@ const PetDetailPage = ({
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <CardDescription className="text-center text-lg">
+            <CardDescription className="text-center">
               {animal} with id: {id} does not exist
             </CardDescription>
             <div className="flex justify-center">

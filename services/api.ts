@@ -19,6 +19,7 @@ export const fetchPets = async (
       page,
     },
   });
+  console.log(response.status);
   return response.data;
 };
 

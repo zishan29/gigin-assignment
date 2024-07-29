@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pets list
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a Pet Listing website built using Next.js and Tailwind CSS. It allows users to browse and search for pets based on animal type, breed, and location. The website incorporates state management using React hooks and `react-query` for data fetching. It also follows best coding practices, including the use of ESLint and Prettier for code quality.
+
+## Project Setup
+
+### Prerequisites
+
+- Node.js (>=14.x)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/zishan29/gigin-assignment.git
+   ```
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+
+   ```
+
+3. Create a `.env.local` file in the root directory and add the following content:
+   ```bash
+   NEXT_PUBLIC_API_BASE_URL=http://pets-v2.dev-apis.com
+   ```
+
+### Running the Application
+
+1. Start the development server:
 
 ```bash
 npm run dev
@@ -14,23 +47,36 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design decisions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Combobox for Animal and Breed Search
 
-## Learn More
+The Combobox component is used for selecting the animal type and breed. This component provides an interactive dropdown with search capabilities, enhancing the user experience by making it easier to find specific animals and breeds.
 
-To learn more about Next.js, take a look at the following resources:
+### Next.js over Vite
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The decision to use Next.js instead of Vite was based on the following reasons:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Built-in Routing: Next.js provides a file-based routing system, simplifying the process of creating and managing routes.
 
-## Deploy on Vercel
+- Server-Side Rendering (SSR): Next.js supports SSR out-of-the-box, improving the performance and SEO of the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- API Routes: Next.js allows the creation of API routes within the same project, making it easier to handle server-side logic without setting up an additional backend server.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Static Site Generation (SSG): Next.js supports SSG, enabling the generation of static HTML pages at build time for improved performance.
+
+## Screenshots
+
+![Screenshot 1](https://github.com/zishan29/gigin-assignment/tree/main/assets/screenshot1.png)
+
+![Screenshot 2](https://github.com/zishan29/gigin-assignment/tree/main/assets/screenshot2.png)
+
+## How to Contribute
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
