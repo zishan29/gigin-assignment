@@ -56,7 +56,7 @@ export const SearchForm = () => {
     handleParamChange("location", event.target.value);
 
   return (
-    <div className="flex gap-4">
+    <div className="hidden sm:flex gap-4">
       <Combobox
         data={animals.isLoading ? [] : animalsData!}
         handleChange={handleAnimalChange}

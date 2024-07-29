@@ -1,10 +1,5 @@
 import axios from "axios";
-import {
-  AnimalsResponse,
-  ApiResponse,
-  BreedsResponse,
-  PetResponse,
-} from "@/types";
+import { AnimalsResponse, ApiResponse, BreedsResponse } from "@/types";
 import { wrapInQuotes } from "@/lib/utils";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -27,7 +22,7 @@ export const fetchPets = async (
   return response.data;
 };
 
-export const fetchPetById = async (id: string): Promise<PetResponse> => {
+export const fetchPetById = async (id: string): Promise<ApiResponse> => {
   const response = await axios.get(`${API_BASE_URL}/pets`, {
     params: {
       id,
