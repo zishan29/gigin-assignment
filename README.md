@@ -14,24 +14,27 @@ This project is a Pet Listing website built using Next.js and Tailwind CSS. It a
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/zishan29/gigin-assignment.git
-   ```
+
+```bash
+git clone https://github.com/zishan29/gigin-assignment.git
+```
+
 2. Install dependencies:
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
 
-   ```
+```
 
 3. Create a `.env.local` file in the root directory and add the following content:
-   ```bash
-   NEXT_PUBLIC_API_BASE_URL=http://pets-v2.dev-apis.com
-   ```
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=http://pets-v2.dev-apis.com
+```
 
 ### Running the Application
 
@@ -69,14 +72,6 @@ The decision to use Next.js instead of Vite was based on the following reasons:
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/zishan29/gigin-assignment/tree/main/assets/screenshot1.png)
+![Screenshot 1](/assets/screenshot1.png)
 
-![Screenshot 2](https://github.com/zishan29/gigin-assignment/tree/main/assets/screenshot2.png)
-
-## How to Contribute
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
+![Screenshot 2](/assets/screenshot2.png)
