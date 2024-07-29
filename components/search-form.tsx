@@ -6,6 +6,7 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { formatData } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAllAnimals, fetchBreedsByAnimal } from "@/services/api";
+import { useDebouncedCallback } from "use-debounce";
 
 export const SearchForm = () => {
   const searchParams = useSearchParams();
@@ -52,8 +53,11 @@ export const SearchForm = () => {
     handleParamChange("animal", newAnimal);
   const handleBreedChange = (newBreed: string) =>
     handleParamChange("breed", newBreed);
-  const handleLocationChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    handleParamChange("location", event.target.value);
+  const handleLocationChange = useDebouncedCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) =>
+      handleParamChange("location", event.target.value),
+    300
+  );
 
   return (
     <div className="hidden sm:flex gap-4">
@@ -80,7 +84,7 @@ export const SearchForm = () => {
         type="text"
         placeholder="Search location..."
         onChange={handleLocationChange}
-        value={location}
+        defaultValue={location}
       />
     </div>
   );
